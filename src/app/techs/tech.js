@@ -1,7 +1,7 @@
 import {Component, Input} from 'angular2/core';
 
 @Component({
-  selector: 'tech-component',
+  selector: 'Tech',
   template: `
     <div class="tech">
       <img class="tech-logo" [src]="tech.logo"/>

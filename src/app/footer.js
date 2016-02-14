@@ -1,7 +1,7 @@
 import {Component} from 'angular2/core';
 
 @Component({
-  selector: 'footer-component',
+  selector: 'Footer',
   template: `
     <footer class="footer">
       Build with ♥ by the&nbsp;

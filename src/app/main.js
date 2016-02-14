@@ -1,23 +1,23 @@
 import {Component} from 'angular2/core';
 import {Header} from './header';
 import {Title} from './title';
-import {Techs} from './techs/techs';
+import {TechsContainer} from '../ngrx/containers';
 import {Footer} from './footer';
 import Actions from '../ngrx/actions';
 
 @Component({
-  selector: 'techs-app',
+  selector: 'Main',
   template: `
     <div class="main-container">
-      <header-component></header-component>
+      <Header></Header>
       <main class="main">
-        <title-component></title-component>
-        <techs-component></techs-component>
+        <TitleComponent></TitleComponent>
+        <TechsContainer></TechsContainer>
       </main>
-      <footer-component></footer-component>
+      <Footer></Footer>
     </div>
   `,
-  directives: [Header, Title, Techs, Footer]
+  directives: [Header, Title, TechsContainer, Footer]
 })
 export class Main {
   constructor(actions: Actions) {

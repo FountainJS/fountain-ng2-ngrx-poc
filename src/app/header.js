@@ -1,7 +1,7 @@
 import {Component} from 'angular2/core';
 
 @Component({
-  selector: 'header-component',
+  selector: 'Header',
   template: `
     <header class="header">
       <p class="header-title">

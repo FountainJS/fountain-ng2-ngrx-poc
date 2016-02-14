@@ -1,23 +1,20 @@
-import {Component, ChangeDetectionStrategy} from 'angular2/core';
-import {Store} from '@ngrx/store';
+import {Component, Input} from 'angular2/core';
 import {Tech} from './tech';
 
 @Component({
-  selector: 'techs-component',
+  selector: 'Techs',
   template: `
     <div class="techs-container">
       <h2 class="techs-h2">
         Cooked with all these awesome technologies:
       </h2>
       <div class="techs">
-        <tech-component *ngFor="#tech of techs | async" [tech]="tech"></tech-component>
+        <Tech *ngFor="#tech of techs" [tech]="tech"></Tech>
       </div>
     </div>
   `,
   directives: [Tech]
 })
 export class Techs {
-  constructor(store: Store) {
-    this.techs = store.select('techs');
-  }
+  @Input() techs;
 }

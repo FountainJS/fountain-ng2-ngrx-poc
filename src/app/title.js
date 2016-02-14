@@ -1,7 +1,7 @@
 import {Component} from 'angular2/core';
 
 @Component({
-  selector: 'title-component',
+  selector: 'TitleComponent',
   template: `
     <div class="title">
       <h1 class="title-h1">'Allo, 'Allo!</h1>
