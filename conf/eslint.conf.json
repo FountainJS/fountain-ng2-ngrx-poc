@@ -1,0 +1,15 @@
+{
+  "parse": "babel-eslint",
+  "env": {
+    "browser": true,
+    "jasmine": true,
+    "es6": true
+  },
+  "ecmaFeatures": {
+    "modules": true
+  },
+  "globals": {
+    "module": true,
+    "inject": true
+  }
+}
