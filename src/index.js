@@ -1,4 +1,5 @@
 import 'reflect-metadata';
+import 'zone.js';
 
 import {bootstrap} from 'angular2/bootstrap';
 import {provide} from 'angular2/core';
