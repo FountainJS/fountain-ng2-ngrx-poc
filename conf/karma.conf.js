@@ -1,10 +1,7 @@
 const conf = require('./gulp.conf');
 
 module.exports = function (config) {
-  var configuration = {
-    browsers: [
-      'PhantomJS'
-    ],
+  const configuration = {
     basePath: '../',
     singleRun: true,
     autoWatch: false,
@@ -12,8 +9,10 @@ module.exports = function (config) {
     junitReporter: {
       outputDir: 'test-reports'
     },
+    browsers: [
+      'Chrome'
+    ],
     frameworks: [
-      'phantomjs-shim',
       'jasmine'
     ],
     files: [
@@ -25,16 +24,20 @@ module.exports = function (config) {
         'webpack'
       ]
     },
-    webpack: require('./webpack-test.conf.js'),
+    reporters: ['progress', 'coverage'],
+    coverageReporter: {
+      type: 'html',
+      dir: 'coverage/'
+    },
+    webpack: require('./webpack-test.conf'),
     webpackMiddleware: {
       noInfo: true
     },
     plugins: [
       require('karma-jasmine'),
       require('karma-junit-reporter'),
-      require('karma-phantomjs-launcher'),
-      require('karma-phantomjs-shim'),
       require('karma-coverage'),
+      require('karma-chrome-launcher'),
       require('karma-webpack')
     ]
   };

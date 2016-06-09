@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'Header',
@@ -6,11 +6,11 @@ import {Component} from 'angular2/core';
     <header class="header">
       <p class="header-title">
         <a href="https://github.com/FountainJS/generator-fountain-webapp" target="_blank">
-          Foutain Generator
+          Fountain Generator
         </a>
       </p>
       <p class="header-date">
-        Generated with FountainJS v0.2.2 on Sat Feb 13 2016 17:31:36 GMT+0100 (CET)
+        Generated with FountainJS v0.5.3 on Thu Jun 09 2016 12:09:19 GMT+0200 (CEST)
       </p>
     </header>
   `

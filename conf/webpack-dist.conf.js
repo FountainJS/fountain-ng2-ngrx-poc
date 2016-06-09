@@ -7,9 +7,23 @@ const autoprefixer = require('autoprefixer');
 
 module.exports = {
   module: {
+    preLoaders: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'eslint'
+      }
+    ],
+
     loaders: [
       {
-        test: /\.scss$/,
+        test: /.json$/,
+        loaders: [
+          'json'
+        ]
+      },
+      {
+        test: /\.(css|scss)$/,
         loaders: [
           'style',
           'css',
@@ -27,15 +41,18 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.NoErrorsPlugin(),
     new HtmlWebpackPlugin({
       template: conf.path.src('index.html'),
       inject: true
     }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': '"production"'
+    }),
     new webpack.optimize.UglifyJsPlugin({
-        compress: { unused: true, dead_code: true }
-      })
+      compress: {unused: true, dead_code: true} // eslint-disable-line camelcase
+    })
   ],
   postcss: () => [autoprefixer],
   output: {

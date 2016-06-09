@@ -1,4 +1,5 @@
-import {Component, Input} from 'angular2/core';
+import {Component, Input} from '@angular/core';
+import 'rxjs/Rx';
 import {Tech} from './tech';
 
 @Component({
@@ -9,7 +10,7 @@ import {Tech} from './tech';
         Cooked with all these awesome technologies:
       </h2>
       <div class="techs">
-        <Tech *ngFor="#tech of techs" [tech]="tech"></Tech>
+        <Tech *ngFor="let tech of techs" [tech]="tech"></Tech>
       </div>
     </div>
   `,

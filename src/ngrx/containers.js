@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {Techs} from '../app/techs/techs';
 
